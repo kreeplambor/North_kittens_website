@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Северные котята - Помощь уличным котикам</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        nav {
+            background: #f8f9fa;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #764ba2;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 0;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 40px;
+        }
+
+        /* About */
+        #about {
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 300px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 5em;
+        }
+
+        /* Activities */
+        #activities {
+            background: #f8f9fa;
+        }
+
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .activity-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .activity-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .activity-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        /* Cats */
+        #cats {
+            background: white;
+        }
+
+        .cats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .cat-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .cat-image {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4em;
+        }
+
+        .cat-info {
+            padding: 20px;
+        }
+
+        .cat-info h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .cat-status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .status-seeking {
+            background: #ffeaa7;
+            color: #d63031;
+        }
+
+        .status-treated {
+            background: #55efc4;
+            color: #00b894;
+        }
+
+        /* Help */
+        #help {
+            background: #f8f9fa;
+        }
+
+        .help-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .help-option {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .help-option h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Telegram Button */
+        .telegram-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #0088cc 0%, #005f8f 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2em;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 20px;
+        }
+
+        .telegram-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,136,204,0.3);
+        }
+
+        .cta-center {
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3436;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>🐱 Северные котята</h1>
+            <p>Помощь, лечение и пристройство уличных котиков</p>
+            <a href="https://t.me/north_kittens" class="telegram-btn">Подписаться на канал</a>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#activities">Что мы делаем</a></li>
+                <li><a href="#cats">Наши подопечные</a></li>
+                <li><a href="#help">Как помочь</a></li>
+                <li><a href="https://t.me/north_kittens">Telegram</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>О нашем проекте</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Мы — команда волонтёров проекта «Северные котята», посвятивших себя помощи бездомным кошкам нашего города. Каждый день мы спасаем жизни тех, кто оказался на улице без защиты и заботы.</p>
+                    <p>Наша миссия — не просто накормить бездомных животных, а обеспечить им комплексную помощь: от лечения и стерилизации до поиска любящего дома.</p>
+                    <p>Присоединяйтесь к нам в Telegram-канале, где мы делимся историями спасения, рассказываем о подопечных и координируем помощь!</p>
+                </div>
+                <div class="about-image">
+                    🐾
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities">
+        <div class="container">
+            <h2>Что мы делаем</h2>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-icon">🏥</div>
+                    <h3>Лечение</h3>
+                    <p>Оказываем ветеринарную помощь пострадавшим и больным животным. Оплачиваем лечение, покупаем лекарства и обеспечиваем реабилитацию.</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon">🏠</div>
+                    <h3>Пристройством</h3>
+                    <p>Ищем ответственных и любящих хозяев для наших подопечных. Тщательно проверяем будущих владельцев и поддерживаем связь после передачи.</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon">✂️</div>
+                    <h3>Стерилизация</h3>
+                    <p>Проводим программу стерилизации уличных кошек для контроля численности бездомных животных и улучшения их качества жизни.</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon">🍽️</div>
+                    <h3>Кормление</h3>
+                    <p>Регулярно кормим бездомных кошек в различных точках города. Организуем пункты кормления и запасы еды на зиму.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cats Section -->
+    <section id="cats">
+        <div class="container">
+            <h2>Наши подопечные</h2>
+            <div class="cats-grid">
+                <div class="cat-card">
+                    <div class="cat-image">🐱</div>
+                    <div class="cat-info">
+                        <h3>Мурзик</h3>
+                        <p>Милый рыжий котик, 2 года. Найден на улице с травмой лапы. Прошёл лечение, полностью здоров.</p>
+                        <span class="cat-status status-seeking">Ищет дом</span>
+                    </div>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-image">🐱</div>
+                    <div class="cat-info">
+                        <h3>Снежинка</h3>
+                        <p>Белая пушистая кошечка, 1 год. Была подобрана зимой, прошла стерилизацию и вакцинацию.</p>
+                        <span class="cat-status status-seeking">Ищет дом</span>
+                    </div>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-image">🐱</div>
+                    <div class="cat-info">
+                        <h3>Барсик</h3>
+                        <p>Серый полосатый кот, 3 года. Долгое время жил на улице, теперь социализирован и готов к дому.</p>
+                        <span class="cat-status status-seeking">Ищет дом</span>
+                    </div>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-image">🐱</div>
+                    <div class="cat-info">
+                        <h3>Луна</h3>
+                        <p>Чёрная кошечка, 6 месяцев. Спасена из подвала, проходит курс реабилитации после болезни.</p>
+                        <span class="cat-status status-treated">На лечении</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cta-center">
+                <a href="https://t.me/north_kittens" class="telegram-btn">Смотреть всех котиков в канале</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Help Section -->
+    <section id="help">
+        <div class="container">
+            <h2>Как вы можете помочь</h2>
+            <div class="help-options">
+                <div class="help-option">
+                    <h3>💰 Финансово</h3>
+                    <p>Любая сумма важна! Средства идут на лечение, корм, стерилизацию и содержание передержек.</p>
+                    <p><strong>Реквизиты:</strong><br>Карта: XXXX XXXX XXXX XXXX<br>Телефон: +7 (XXX) XXX-XX-XX</p>
+                </div>
+                <div class="help-option">
+                    <h3>🤝 Волонтёрством</h3>
+                    <p>Помогите с выгулом, кормлением, транспортировкой животных или организацией мероприятий.</p>
+                    <p>Напишите нам в Telegram!</p>
+                </div>
+                <div class="help-option">
+                    <h3>📢 Репостами</h3>
+                    <p>Расскажите о нас друзьям, делитесь постами о котятах, ищущих дом. Каждый репост может спасти жизнь!</p>
+                </div>
+                <div class="help-option">
+                    <h3>🏡 Передержкой</h3>
+                    <p>Временный дом для котика до поиска постоянных хозяев — бесценная помощь для нас.</p>
+                </div>
+            </div>
+            <div class="cta-center">
+                <a href="https://t.me/north_kittens" class="telegram-btn">Связаться с нами</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2024 Северные котята. Все права защищены.</p>
+            <p>Проект помогает бездомным кошкам найти дом и заботу 🐾</p>
+        </div>
+    </footer>
+</body>
+</html>
