@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Северные котята - Помощь уличным котикам</title>
+    <title>Северные котята - Помощь уличным котикам района Северный</title>
     <style>
         * {
             margin: 0;
@@ -23,7 +23,7 @@
             padding: 0 20px;
         }
 
-        /* Header */
+        /* Заголовок */
         header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -41,7 +41,7 @@
             opacity: 0.9;
         }
 
-        /* Navigation */
+        /* Навигация */
         nav {
             background: #f8f9fa;
             padding: 15px 0;
@@ -69,7 +69,7 @@
             color: #764ba2;
         }
 
-        /* Sections */
+        /* Секции */
         section {
             padding: 60px 0;
         }
@@ -81,7 +81,7 @@
             margin-bottom: 40px;
         }
 
-        /* About */
+        /* О нас */
         #about {
             background: white;
         }
@@ -109,7 +109,7 @@
             font-size: 5em;
         }
 
-        /* Activities */
+        /* Деятельность */
         #activities {
             background: #f8f9fa;
         }
@@ -143,7 +143,7 @@
             margin-bottom: 15px;
         }
 
-        /* Cats */
+        /* Коты */
         #cats {
             background: white;
         }
@@ -199,7 +199,7 @@
             color: #00b894;
         }
 
-        /* Help */
+        /* Помощь */
         #help {
             background: #f8f9fa;
         }
@@ -225,8 +225,8 @@
             gap: 10px;
         }
 
-        /* Telegram Button */
-        .telegram-btn {
+        /* Кнопка Telegram */
+        .telegram_button {
             display: inline-block;
             background: linear-gradient(135deg, #0088cc 0%, #005f8f 100%);
             color: white;
@@ -239,7 +239,7 @@
             margin-top: 20px;
         }
 
-        .telegram-btn:hover {
+        .telegram_button:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0,136,204,0.3);
         }
@@ -248,7 +248,7 @@
             text-align: center;
         }
 
-        /* Footer */
+        /* Колонтитул */
         footer {
             background: #2d3436;
             color: white;
@@ -260,7 +260,7 @@
             opacity: 0.8;
         }
 
-        /* Responsive */
+        /* Responsive - нужна для мобильных устройств */
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2em;
@@ -278,21 +278,30 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Заголовок -->
     <header>
         <div class="container">
             <h1>Северные котята</h1>
             <p>Помогаем уличным котикам района Северный</p>
-            <a href="https://t.me/north_kittens" class="telegram-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
-                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"/>
+            <a href="https://t.me/north_kittens"
+                class="telegram_button"
+                style="display: inline-flex; align-items: center; gap: 0.5em; padding: 0.5em 1em; line-height: 1.5em;">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    width="2.5em" height="2.5em"  
+                    fill="currentColor" 
+                    class="bi bi-telegram" 
+                    viewBox="0 0 16 16"
+                    style="flex-shrink: 0; vertical-align: middle;;"
+                    >
+                    <path 
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"/>
                 </svg>
-                Подписаться на канал
+                Подпишитесь на наш Telegram-канал
             </a>
         </div>
     </header>
 
-    <!-- Navigation -->
+    <!-- Навигация -->
     <nav>
         <div class="container">
             <ul>
@@ -305,7 +314,7 @@
         </div>
     </nav>
 
-    <!-- About Section -->
+    <!-- Секция "О нас" -->
     <section id="about">
         <div class="container">
             <h2>О нашем проекте</h2>
@@ -322,7 +331,7 @@
         </div>
     </section>
 
-    <!-- Activities Section -->
+    <!-- Секция "Что мы делаем" -->
     <section id="activities">
         <div class="container">
             <h2>Что мы делаем</h2>
@@ -351,7 +360,7 @@
         </div>
     </section>
 
-    <!-- Cats Section -->
+    <!-- Секция "Наши подопечные" -->
     <section id="cats">
         <div class="container">
             <h2>Наши подопечные</h2>
@@ -390,12 +399,12 @@
                 </div>
             </div>
             <div class="cta-center">
-                <a href="https://t.me/north_kittens" class="telegram-btn">Смотреть всех котиков в канале</a>
+                <a href="https://t.me/north_kittens" class="telegram_button">Смотреть всех котиков в канале</a>
             </div>
         </div>
     </section>
 
-    <!-- Help Section -->
+    <!-- Секция помощи -->
     <section id="help">
         <div class="container">
             <h2>Как вы можете помочь</h2>
@@ -420,16 +429,16 @@
                 </div>
             </div>
             <div class="cta-center">
-                <a href="https://t.me/north_kittens" class="telegram-btn">Связаться с нами</a>
+                <a href="https://t.me/north_kittens" class="telegram_button">Связаться с нами</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Колонтитул -->
     <footer>
         <div class="container">
-            <p>© 2024 Северные котята. Все права защищены.</p>
-            <p>Проект помогает бездомным кошкам найти дом и заботу 🐾</p>
+            <p>© 2026 Северные котята. Никаких прав не защищено.</p>
+            <p>By kreeplambor with the best of intentions</p>
         </div>
     </footer>
 </body>
