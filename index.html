@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Северные котята - Помощь уличным котикам района Северный</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="image_carousel _script.js" defer></script>
 </head>
 <body>
     <!-- Заголовок -->
@@ -37,10 +38,10 @@
         <div class="container">
             <ul>
                 <li><a href="#about">О нас</a></li>
+                <li><a href="#news">Новости</a></li>
                 <li><a href="#activities">Что мы делаем</a></li>
                 <li><a href="#cats">Наши подопечные</a></li>
                 <li><a href="#help">Как помочь</a></li>
-                <li><a href="https://t.me/north_kittens">Telegram</a></li>
             </ul>
         </div>
     </nav>
@@ -56,12 +57,49 @@
                     <p>Присоединяйтесь к нам в Telegram-канале, где мы делимся историями спасения, рассказываем о подопечных и координируем помощь!</p>
                 </div>
                 <div class="about-image">
-                    🐾
+                    <img src="Test_image1.jpg" alt="Test image">
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Секция "Новости" -->
+    <section id="news">
+        <div class="container">
+            <h2>Новости</h2>
+            <div class="news-grid">
+                <div class="news-item">
+                    <div class="news-image-carousel">
+                        <img class="is-active" src="Test_image1.jpg" alt="Фотография из новости">
+                        <img src="Test_image2.jpg" alt="Ещё одна фотография из новости" aria-hidden="true">
+                        <img src="Test_image3.jpg" alt="Третья фотография из новости" aria-hidden="true">
+                        <button class="carousel-toggle carousel-toggle--previous" type="button" aria-label="Показать предыдущее фото">←</button>
+                        <button class="carousel-toggle carousel-toggle--next" type="button" aria-label="Показать следующее фото">→</button>
+                    </div>
+                    <h3>12 июня 2026</h3>
+                    <p>Мы открыли новую передержку для наших подопечных! Теперь у нас есть больше места для спасённых котиков.</p>
+                </div>
+                <div class="news-item">
+                    <div class="news-image-carousel">
+                        <img class="is-active" src="Test_image1.jpg" alt="Фотография из новости">
+                        <img src="Test_image2.jpg" alt="Ещё одна фотография из новости" aria-hidden="true">
+                        <img src="Test_image3.jpg" alt="Третья фотография из новости" aria-hidden="true">
+                        <button class="carousel-toggle carousel-toggle--previous" type="button" aria-label="Показать предыдущее фото">←</button>
+                        <button class="carousel-toggle carousel-toggle--next" type="button" aria-label="Показать следующее фото">→</button>
+                    </div>
+                    <h3>5 июня 2026</h3>
+                    <p>В этом месяце мы провели стерилизацию 15 уличных кошек, что поможет контролировать численность бездомных животных.</p>
+                </div>
+                <div class="news-item">
+                    <div class="news-image-carousel">
+                        <img class="is-active" src="Test_image1.jpg" alt="Фотография из новости">
+                    </div>
+                    <h3>28 мая 2026</h3>
+                    <p>Мурзик был найден с травмой лапы. Благодаря вашей поддержке, он прошёл лечение и теперь ищет любящий дом.</p>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Секция "Что мы делаем" -->
     <section id="activities">
         <div class="container">
@@ -97,7 +135,7 @@
             <h2>Наши подопечные</h2>
             <div class="cats-grid">
                 <div class="cat-card">
-                    <div class="cat-image">🐱</div>
+                    <div class="cat-image"><img src="Test_image1.jpg" alt="Мурзик"></div>
                     <div class="cat-info">
                         <h3>Мурзик</h3>
                         <p>Милый рыжий котик, 2 года. Найден на улице с травмой лапы. Прошёл лечение, полностью здоров.</p>
@@ -105,7 +143,7 @@
                     </div>
                 </div>
                 <div class="cat-card">
-                    <div class="cat-image">🐱</div>
+                    <div class="cat-image"><img src="Test_image1.jpg" alt="Снежинка"></div>
                     <div class="cat-info">
                         <h3>Снежинка</h3>
                         <p>Белая пушистая кошечка, 1 год. Была подобрана зимой, прошла стерилизацию и вакцинацию.</p>
@@ -113,7 +151,7 @@
                     </div>
                 </div>
                 <div class="cat-card">
-                    <div class="cat-image">🐱</div>
+                    <div class="cat-image"><img src="Test_image1.jpg" alt="Барсик"></div>
                     <div class="cat-info">
                         <h3>Барсик</h3>
                         <p>Серый полосатый кот, 3 года. Долгое время жил на улице, теперь социализирован и готов к дому.</p>
@@ -121,7 +159,7 @@
                     </div>
                 </div>
                 <div class="cat-card">
-                    <div class="cat-image">🐱</div>
+                    <div class="cat-image"><img src="Test_image1.jpg" alt="Луна"></div>
                     <div class="cat-info">
                         <h3>Луна</h3>
                         <p>Чёрная кошечка, 6 месяцев. Спасена из подвала, проходит курс реабилитации после болезни.</p>
