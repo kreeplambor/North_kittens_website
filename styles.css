@@ -118,21 +118,80 @@ section h2 {
 }
 
 .news-image-carousel {
+    --image-corner-radius: 20px;
+    --carousel-slide-duration: 350ms;
     position: relative;
     width: 100%;
+    overflow: hidden;
     margin-bottom: 15px;
     touch-action: pan-y;
+    transition: height 350ms ease;
 }
 
 .news-image-carousel img {
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: auto;
-    border-radius: 20px;
+    border-radius: var(--image-corner-radius);
+    opacity: 0;
+    transform: translateX(12px);
+    transition: opacity 300ms ease, transform 300ms ease, border-radius 250ms ease;
 }
 
 .news-image-carousel img.is-active {
-    display: block;
+    position: relative;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.news-image-carousel img.is-entering-previous {
+    transform: translateX(-12px);
+}
+
+.news-image-carousel img.is-leaving-next {
+    opacity: 0;
+    transform: translateX(-12px);
+}
+
+.news-image-carousel img.is-leaving-previous {
+    opacity: 0;
+    transform: translateX(12px);
+}
+
+.news-image-carousel img.is-drag-preview {
+    opacity: 1;
+}
+
+.news-image-carousel.is-dragging img {
+    transition: none;
+}
+
+.news-image-carousel.is-settling img {
+    transition: transform var(--carousel-slide-duration) ease;
+}
+
+.news-image-carousel.is-settling img.is-active,
+.news-image-carousel.is-settling img.is-drag-preview {
+    animation: carousel-image-radius var(--carousel-slide-duration) ease both;
+}
+
+@keyframes carousel-image-radius {
+    0% {
+        border-radius: var(--starting-image-radius, var(--image-corner-radius));
+    }
+    70% {
+        border-radius: 0;
+    }
+    100% {
+        border-radius: var(--image-corner-radius);
+    }
+}
+
+.news-image-carousel.is-finalizing img {
+    transition: none !important;
+    border-radius: 0 !important;
 }
 
 .carousel-toggle {
@@ -149,7 +208,6 @@ section h2 {
     color: white;
     font-size: 1.5rem;
     cursor: pointer;
-    opacity: 0;
     pointer-events: none;
     transform: translateY(-50%);
     transition: opacity 0.2s;
@@ -161,9 +219,28 @@ section h2 {
 }
 
 .news-image-carousel:hover .carousel-toggle,
-.news-image-carousel:focus-within .carousel-toggle {
+.news-image-carousel .carousel-toggle:focus-visible {
     opacity: 1;
     pointer-events: auto;
+}
+
+@media (hover: none) {
+    .news-image-carousel .carousel-toggle {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .news-image-carousel,
+    .news-image-carousel img,
+    .news-image-carousel.is-settling img {
+        transition-duration: 0.01ms;
+    }
+
+    .news-image-carousel.is-settling img.is-active,
+    .news-image-carousel.is-settling img.is-drag-preview {
+        animation-duration: 0.01ms;
+    }
 }
 
 /* Деятельность */
