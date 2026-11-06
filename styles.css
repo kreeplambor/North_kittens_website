@@ -298,7 +298,7 @@ section h2 {
     margin-bottom: 15px;
 }
 
-/* Коты */
+/* Наши подопечные */
 #cats {
     background: white;
 }
@@ -310,6 +310,8 @@ section h2 {
 }
 
 .cat-card {
+    display: flex;
+    flex-direction: column;
     background: #f8f9fa;
     border-radius: 15px;
     overflow: hidden;
@@ -334,7 +336,17 @@ section h2 {
 }
 
 .cat-info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
     padding: 20px;
+}
+
+.cat-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
 }
 
 .cat-info h3 {
@@ -342,13 +354,24 @@ section h2 {
     margin-bottom: 10px;
 }
 
+.cat-age {
+    font-size: 0.9em;
+    background: #667eea;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
 .cat-status {
     display: inline-block;
-    padding: 5px 15px;
+    align-self: flex-start;
+    padding: 5px 12px;
     border-radius: 20px;
     font-size: 0.9em;
     font-weight: 600;
-    margin-top: 10px;
+    margin-top: auto;
+    
 }
 
 .status-seeking {
@@ -377,6 +400,11 @@ section h2 {
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.help-option:hover {
+    transform: translateY(-10px);
 }
 
 .help-option h3 {
@@ -385,6 +413,13 @@ section h2 {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+@media (min-width: 1000px) {
+    .activity-card:nth-child(4):last-child,
+    .help-option:nth-child(4):last-child {
+        grid-column: 2;
+    }
 }
 
 /* Кнопка Telegram */
@@ -407,6 +442,23 @@ section h2 {
 }
 
 .cta-center {
+    text-align: center;
+}
+
+.cat-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+.cat-buttons .telegram_button {
+    display: flex;
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+    min-width: min-content;
+    max-width: 320px;
     text-align: center;
 }
 
@@ -435,5 +487,15 @@ footer p {
     nav ul {
         flex-wrap: wrap;
         gap: 15px;
+    }
+
+    .cat-buttons .telegram_button {
+        padding: 15px 0.8em;
+    }
+}
+
+@media (max-width: 264px) {
+    .cat-buttons {
+        flex-direction: column;
     }
 }
