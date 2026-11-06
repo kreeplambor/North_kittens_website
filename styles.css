@@ -112,9 +112,29 @@ section h2 {
     gap: 30px;
 }
 
+.news-item > a {
+    text-decoration: none;
+}
+
+.news-tag {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-top: 10px;
+    background: #ffeaa7;
+    color: #d63031;
+}
+
 .news-item h3 {
     color: #667eea;
     margin-bottom: 10px;
+}
+
+.news-item p {
+    margin-bottom: 0.6em;
+    line-height: 1.4;
 }
 
 .news-image-carousel {
