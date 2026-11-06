@@ -103,13 +103,20 @@ section h2 {
 
 /* Новости */
 #news {
-    background: #f8f9fa;
+    background:#f8f9fa;
 }
 
 .news-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
+}
+
+.news-item {
+    --image-corner-radius: 20px;
+    background:white;
+    border-radius: var(--image-corner-radius);
+    padding: 20px;
 }
 
 .news-item > a {
@@ -138,12 +145,12 @@ section h2 {
 }
 
 .news-image-carousel {
-    --image-corner-radius: 20px;
+    --image-corner-radius: inherit;
     --carousel-slide-duration: 350ms;
     position: relative;
-    width: 100%;
+    width: calc(100% + 40px);
     overflow: hidden;
-    margin-bottom: 15px;
+    margin: -20px -20px 15px;
     touch-action: pan-y;
     transition: height 350ms ease;
 }
@@ -266,7 +273,7 @@ section h2 {
 
 /* Деятельность */
 #activities {
-    background: #f8f9fa;
+    background: white;
 }
 
 .activities-grid {
@@ -300,7 +307,7 @@ section h2 {
 
 /* Наши подопечные */
 #cats {
-    background: white;
+    background: #f8f9fa;
 }
 
 .cats-grid {
@@ -386,7 +393,7 @@ section h2 {
 
 /* Помощь */
 #help {
-    background: #f8f9fa;
+    background: white;
 }
 
 .help-options {
