@@ -471,6 +471,7 @@ section h2 {
 
 /* Колонтитул */
 footer {
+    position: relative;
     background: #2d3436;
     color: white;
     padding: 40px 0;
@@ -493,6 +494,10 @@ footer p {
 }
 
 .github-link {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    z-index: 101;
     display: grid;
     width: 48px;
     aspect-ratio: 1;
@@ -502,6 +507,7 @@ footer p {
     background-color: transparent;
     color: white;
     text-decoration: none;
+    transform: translateY(-50%);
     transition: transform 0.2s, background-color 0.2s;
 }
 
