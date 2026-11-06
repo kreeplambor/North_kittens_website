@@ -474,6 +474,36 @@ footer p {
     opacity: 0.8;
 }
 
+.github-link {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 101;
+    display: grid;
+    width: 48px;
+    aspect-ratio: 1;
+    place-items: center;
+    border-radius: 50%;
+    background: #24292f;
+    color: white;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.github-link svg {
+    width: 26px;
+    height: 26px;
+}
+
+.github-link:hover {
+    background: #000;
+    transform: translateY(-2px);
+}
+
+.github-link:focus-visible {
+    outline: 3px solid #667eea;
+    outline-offset: 3px;
+}
+
 /* Responsive - нужна для мобильных устройств */
 @media (max-width: 768px) {
     header h1 {
@@ -491,6 +521,11 @@ footer p {
 
     .cat-buttons .telegram_button {
         padding: 15px 0.8em;
+    }
+
+    .github-link {
+        right: 16px;
+        bottom: 16px;
     }
 }
 
