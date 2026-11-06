@@ -467,25 +467,34 @@ footer {
     background: #2d3436;
     color: white;
     padding: 40px 0;
-    text-align: center;
+}
+
+footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
 }
 
 footer p {
     opacity: 0.8;
 }
 
+.footer-copy {
+    flex: 1;
+    text-align: center;
+}
+
 .github-link {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 101;
     display: grid;
     width: 48px;
     aspect-ratio: 1;
     place-items: center;
+    flex: 0 0 48px;
     border-radius: 50%;
-    background: #24292f;
+    background-color: transparent;
     color: white;
+    text-decoration: none;
     transition: transform 0.2s, background-color 0.2s;
 }
 
@@ -495,8 +504,7 @@ footer p {
 }
 
 .github-link:hover {
-    background: #000;
-    transform: translateY(-2px);
+    background-color: #22282a;
 }
 
 .github-link:focus-visible {
@@ -523,10 +531,6 @@ footer p {
         padding: 15px 0.8em;
     }
 
-    .github-link {
-        right: 16px;
-        bottom: 16px;
-    }
 }
 
 @media (max-width: 264px) {
