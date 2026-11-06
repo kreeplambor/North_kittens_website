@@ -112,9 +112,29 @@ section h2 {
     gap: 30px;
 }
 
+.news-item > a {
+    text-decoration: none;
+}
+
+.news-tag {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-top: 10px;
+    background: #ffeaa7;
+    color: #d63031;
+}
+
 .news-item h3 {
     color: #667eea;
     margin-bottom: 10px;
+}
+
+.news-item p {
+    margin-bottom: 0.6em;
+    line-height: 1.4;
 }
 
 .news-image-carousel {
@@ -278,7 +298,7 @@ section h2 {
     margin-bottom: 15px;
 }
 
-/* Коты */
+/* Наши подопечные */
 #cats {
     background: white;
 }
@@ -290,6 +310,8 @@ section h2 {
 }
 
 .cat-card {
+    display: flex;
+    flex-direction: column;
     background: #f8f9fa;
     border-radius: 15px;
     overflow: hidden;
@@ -314,7 +336,17 @@ section h2 {
 }
 
 .cat-info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
     padding: 20px;
+}
+
+.cat-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
 }
 
 .cat-info h3 {
@@ -322,13 +354,24 @@ section h2 {
     margin-bottom: 10px;
 }
 
+.cat-age {
+    font-size: 0.9em;
+    background: #667eea;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
 .cat-status {
     display: inline-block;
-    padding: 5px 15px;
+    align-self: flex-start;
+    padding: 5px 12px;
     border-radius: 20px;
     font-size: 0.9em;
     font-weight: 600;
-    margin-top: 10px;
+    margin-top: auto;
+    
 }
 
 .status-seeking {
@@ -357,6 +400,11 @@ section h2 {
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.help-option:hover {
+    transform: translateY(-10px);
 }
 
 .help-option h3 {
@@ -365,6 +413,13 @@ section h2 {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+@media (min-width: 1000px) {
+    .activity-card:nth-child(4):last-child,
+    .help-option:nth-child(4):last-child {
+        grid-column: 2;
+    }
 }
 
 /* Кнопка Telegram */
@@ -390,6 +445,23 @@ section h2 {
     text-align: center;
 }
 
+.cat-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+.cat-buttons .telegram_button {
+    display: flex;
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+    min-width: min-content;
+    max-width: 320px;
+    text-align: center;
+}
+
 /* Колонтитул */
 footer {
     background: #2d3436;
@@ -400,6 +472,36 @@ footer {
 
 footer p {
     opacity: 0.8;
+}
+
+.github-link {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 101;
+    display: grid;
+    width: 48px;
+    aspect-ratio: 1;
+    place-items: center;
+    border-radius: 50%;
+    background: #24292f;
+    color: white;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.github-link svg {
+    width: 26px;
+    height: 26px;
+}
+
+.github-link:hover {
+    background: #000;
+    transform: translateY(-2px);
+}
+
+.github-link:focus-visible {
+    outline: 3px solid #667eea;
+    outline-offset: 3px;
 }
 
 /* Responsive - нужна для мобильных устройств */
@@ -415,5 +517,20 @@ footer p {
     nav ul {
         flex-wrap: wrap;
         gap: 15px;
+    }
+
+    .cat-buttons .telegram_button {
+        padding: 15px 0.8em;
+    }
+
+    .github-link {
+        right: 16px;
+        bottom: 16px;
+    }
+}
+
+@media (max-width: 264px) {
+    .cat-buttons {
+        flex-direction: column;
     }
 }
