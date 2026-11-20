@@ -525,6 +525,31 @@ footer p {
     outline-offset: 3px;
 }
 
+/* Страница 404 */
+.not-found {
+    background: white;
+    text-align: center;
+}
+
+.not-found-code {
+    display: block;
+    font-size: 6em;
+    font-weight: 700;
+    line-height: 1;
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.not-found p {
+    max-width: 640px;
+    margin: 0 auto 10px;
+    font-size: 1.15em;
+}
+
+.not-found .telegram_button {
+    margin-top: 30px;
+}
+
 /* Responsive - нужна для мобильных устройств */
 @media (max-width: 768px) {
     header h1 {
@@ -542,6 +567,10 @@ footer p {
 
     .cat-buttons .telegram_button {
         padding: 15px 0.8em;
+    }
+
+    .not-found-code {
+        font-size: 4em;
     }
 
 }
